@@ -32,5 +32,5 @@ describe('METHOD: getWelcomingMessage', () => {
       expect(true).toEqual(true);
     });
   });
-  
+
 });

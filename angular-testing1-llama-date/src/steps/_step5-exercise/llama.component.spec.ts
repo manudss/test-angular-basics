@@ -1,10 +1,20 @@
 import { LlamaComponent } from './llama.component';
+import { TestBed } from '@angular/core/testing';
 
 describe('METHOD: speak', () => {
 
   let actualValue, expectedValue;
   let fakeWord: string;
   let componentUnderTest: LlamaComponent;
+
+  Given(() => {
+
+      TestBed.configureTestingModule({
+        providers: [LlamaComponent]
+      });
+
+      componentUnderTest = TestBed.get(LlamaComponent);
+    });
 
   When(() => {
     actualValue = componentUnderTest.speak(fakeWord);
@@ -16,7 +26,7 @@ describe('METHOD: speak', () => {
     });
 
     Then(() => {
-      expect(actualValue).toEqual('Llama says: Bonnie'); 
+      expect(actualValue).toEqual('Llama says: Bonnie');
     });
   });
 

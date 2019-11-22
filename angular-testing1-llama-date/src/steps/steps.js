@@ -61,23 +61,23 @@ function changeKarmaConfContent(selectedStep) {
   var changeTo;
   switch (selectedStep) {
     case 'app':
-      changeTo = 1;  
+      changeTo = 1;
       break;
     case 'steps/_step2':
-      changeTo = 2;  
-      break;  
+      changeTo = 2;
+      break;
     case 'steps/_step3-exercise':
     case 'steps/_step3-exercise-solution':
     case 'steps/_step3':
     case 'steps/_step4':
-      changeTo = 3;  
+      changeTo = 3;
       break;
     default:
       changeTo = 4;
   }
-  
+
   if (karmaFileVersion !== changeTo){
-    
+
     var source = require.resolve('./karma/step' + changeTo + '_karma.conf.js');
     var dest = require.resolve('../../karma.conf.js');
 

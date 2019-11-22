@@ -3,7 +3,7 @@
 
 module.exports = function (config) {
   config.set({
-    
+
     plugins: [
       require('karma-jasmine'),
       require('karma-jasmine-given'),
@@ -13,7 +13,7 @@ module.exports = function (config) {
       require('karma-coverage-istanbul-reporter'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
-    
+
     // TRIGGER
     autoWatch: true,
     singleRun: false,
@@ -54,6 +54,6 @@ module.exports = function (config) {
       reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true
     }
-    
+
   });
 };
