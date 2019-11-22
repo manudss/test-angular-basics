@@ -1,9 +1,27 @@
+import { AppComponent } from "./app.component";
 
-it('some description', () => {
-  
-  let actualValue = true;
-  let expectedValue = true;
+describe('METHOD: getWelcomingMessage', () => {
+    let actualValue, expectedValue;
 
-  expect( actualValue ).toEqual( expectedValue );
+    it('should return  Hello with Bonnie', () => {
 
+      const commponent = new AppComponent();
+
+      actualValue = commponent.getWelcomingMessage('Bonnie');
+      expectedValue = 'Hello Bonnie';
+
+      expect( actualValue ).toEqual( expectedValue );
+    });
+
+    it('should return  Hello with Alyssa', () => {
+
+      const commponent = new AppComponent();
+
+      actualValue = commponent.getWelcomingMessage('Alyssa');
+      expectedValue = 'Hello Alyssa';
+
+      expect( actualValue ).toEqual( expectedValue );
+    });
 });
+
+
