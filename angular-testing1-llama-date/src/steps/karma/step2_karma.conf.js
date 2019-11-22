@@ -3,15 +3,17 @@
 
 module.exports = function (config) {
   config.set({
-    
+
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-mocha-reporter'),
+      require('karma-jasmine-diff-reporter'),
+      require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
-    
+
     // TRIGGER
     autoWatch: true,
     singleRun: false,
@@ -29,13 +31,27 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
 
-    reporters: ['mocha'],
+    reporters: ['jasmine-diff', 'mocha', 'kjhtml'],
+
+    jasmineDiffReporter: {
+      color: {
+        expectedBg: 'bgMagenta',
+        expectedWhitespaceBg: 'bgMagenta',
+        actualBg: 'bgBlue',
+        actualWhitespaceBg: 'bgBlue'
+      },
+      legacy: true
+    },
+
+    mochaReporter: {
+      output: 'minimal'
+    },
 
     coverageIstanbulReporter: {
       dir: require('path').join(__dirname, './coverage/llama-date'),
       reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true
     }
-    
+
   });
 };
