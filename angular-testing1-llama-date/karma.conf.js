@@ -6,6 +6,7 @@ module.exports = function (config) {
     
     plugins: [
       require('karma-jasmine'),
+      require('karma-jasmine-given'),
       require('karma-chrome-launcher'),
       require('karma-mocha-reporter'),
       require('karma-jasmine-diff-reporter'),
@@ -19,8 +20,11 @@ module.exports = function (config) {
     restartOnFileChange: true,
 
     // BUILD
-    frameworks: ['jasmine', '@angular-devkit/build-angular'],
+    frameworks: ['jasmine-given', 'jasmine', '@angular-devkit/build-angular'],
     basePath: '',
+    angularCli: {
+      environment: 'dev'
+    },
 
     // RUN
     port: 9876,

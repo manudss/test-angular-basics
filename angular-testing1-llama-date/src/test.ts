@@ -15,6 +15,6 @@ getTestBed().initTestEnvironment(
   platformBrowserDynamicTesting()
 );
 // Then we find all the tests.
-const context = require.context('./steps/_step3-exercise', true, /\.spec\.ts$/);
+const context = require.context('./steps/_step5', true, /\.spec\.ts$/);
 // And load the modules.
 context.keys().map(context);

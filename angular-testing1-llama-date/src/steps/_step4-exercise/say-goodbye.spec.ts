@@ -12,16 +12,49 @@ describe('Exercise', () => {
 
   describe('METHOD: sayGoodbye', () => {
 
-    it('should return goodbye Bonnie', () => {
+    let fakeUserName: string;
 
-      // GIVEN
-      let fakeUserName = 'Bonnie';
+    When (() => {
+        actualValue = sayGoodbye(fakeUserName);
+      });
 
-      // WHEN
-      actualValue = sayGoodbye(fakeUserName);
+    describe('with input Bonnie', () => {
 
-      // THEN
-      expect(actualValue).toEqual('Goodbye Bonnie!');
+      Given (() => {
+        fakeUserName = 'Bonnie';
+      });
+
+
+      Then (() => {
+        expect(actualValue).toEqual('Goodbye Bonnie!');
+      });
+    });
+
+    describe('with input Alice', () => {
+
+      Given (() => {
+        fakeUserName = 'Alice';
+      });
+
+
+      Then (() => {
+        expect(actualValue).toEqual('Goodbye Alice!');
+      });
+    });
+
+    describe('With wrong value', () => {
+
+      describe('with no input', () => {
+
+      Given (() => {
+        fakeUserName = null;
+      });
+
+
+      Then (() => {
+        expect(actualValue).toEqual('No Name!');
+      });
+    });
     });
 
   });
