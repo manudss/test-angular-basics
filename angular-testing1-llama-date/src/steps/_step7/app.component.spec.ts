@@ -29,6 +29,7 @@ describe('METHOD: getWelcomingMessage', () => {
       fakeUserName = 'Bonnie';
 
     });
+
     Then(() => {
       expectedValue = 'Hola Bonnie';
       expect(actualValue).toEqual(expectedValue);

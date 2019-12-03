@@ -38,7 +38,7 @@ describe('front Component', ()=>{
                       });
 
               Then(() => {
-                expect(actualValue).toEqual(true);
+                expect(actualValue).toEqual(false);
                 });
         });
 
