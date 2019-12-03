@@ -19,7 +19,7 @@ describe('METHOD: getWelcomingMessage', () => {
   });
 
   When(() => {
-    actualValue = componentUnderTest.getWelcomingMessage(fakeUserName); 
+    actualValue = componentUnderTest.getWelcomingMessage(fakeUserName);
   });
 
   describe('user name is Bonnie', () => {
@@ -27,6 +27,7 @@ describe('METHOD: getWelcomingMessage', () => {
     Given(() => {
       componentUnderTest.greeting = 'Hola';
       fakeUserName = 'Bonnie';
+
     });
     Then(() => {
       expectedValue = 'Hola Bonnie';
@@ -37,7 +38,7 @@ describe('METHOD: getWelcomingMessage', () => {
   describe('user name is Alyssa', () => {
 
     Given(() => {
-      fakeUserName = 'Alyssa'; 
+      fakeUserName = 'Alyssa';
     });
     Then(() => {
       expectedValue = 'Hello Alyssa';

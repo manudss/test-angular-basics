@@ -12,10 +12,12 @@ export class FrontComponent {
     { name: 'Bonnie' }
   ];
 
+
+
   isListVisible(): boolean {
     if (this.llamas.length > 0) {
       return true;
-    } 
+    }
     return false;
   }
 }

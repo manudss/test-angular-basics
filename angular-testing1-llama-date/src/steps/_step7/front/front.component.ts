@@ -15,7 +15,7 @@ export class FrontComponent {
   isListVisible(): boolean {
     if (this.llamas.length > 0) {
       return true;
-    } 
+    }
     return false;
   }
 }

@@ -35,10 +35,12 @@ describe('FrontComponent', () => {
       });
     });
 
-    describe('no llamas', () => { 
+    describe('no llamas', () => {
 
       Given(() => {
-        componentUnderTest.llamas = [ ];
+        componentUnderTest.llamas = [];
+
+
       });
       Then(() => {
         expect(actualValue).toEqual(false);

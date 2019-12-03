@@ -26,7 +26,7 @@ describe('METHOD: speak', () => {
     });
 
     Then(() => {
-      expect(actualValue).toEqual('Llama says: Bonnie'); 
+      expect(actualValue).toEqual('Llama says: Bonnie');
     });
   });
 
